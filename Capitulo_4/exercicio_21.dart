@@ -24,34 +24,27 @@ void procedencia(double precoProduto, int codigoOrigem) {
     "Nordeste"
   ];
   String mensagem = "";
-  switch (codigoOrigem) {
-    case 1:
-      mensagem = procedenciaProduto[0];
-      break;
-    case 2:
-      mensagem = procedenciaProduto[1];
-      break;
-    case 3:
-      mensagem = procedenciaProduto[2];
-      break;
-    case 4:
-      mensagem = procedenciaProduto[3];
-      break;
-    case 5 || 6:
-      mensagem = procedenciaProduto[4];
-      break;
-    case 7 || 8 || 9:
-      mensagem = procedenciaProduto[5];
-      break;
-    case 10 && < 21:
-      mensagem = procedenciaProduto[6];
-      break;
-    case 21 && < 31:
-      mensagem = procedenciaProduto[4];
-  }
   if (codigoOrigem < 1 || codigoOrigem > 30) {
     print("Codigo inválido");
     return;
   }
+  if (codigoOrigem == 1) {
+    mensagem = procedenciaProduto[0];
+  } else if (codigoOrigem == 2) {
+    mensagem = procedenciaProduto[1];
+  } else if (codigoOrigem == 3) {
+    mensagem = procedenciaProduto[2];
+  } else if (codigoOrigem == 4) {
+    mensagem = procedenciaProduto[3];
+  } else if (codigoOrigem == 5 || codigoOrigem == 6) {
+    mensagem = procedenciaProduto[4];
+  } else if (codigoOrigem == 7 || codigoOrigem == 8 || codigoOrigem == 9) {
+    mensagem = procedenciaProduto[5];
+  } else if (codigoOrigem > 9 || codigoOrigem < 21) {
+    mensagem = procedenciaProduto[6];
+  } else {
+    mensagem = procedenciaProduto[4];
+  }
+
   print("Preço do produto: $precoProduto\nProcedência: $mensagem");
 }

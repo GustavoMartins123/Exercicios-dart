@@ -14,37 +14,28 @@ void main(List<String> args) {
 
 void grupoDeRisco(int idade, int peso) {
   if (idade < 20) {
-    switch (peso) {
-      case < 61:
-        risco = 9;
-        break;
-      case 61 && < 91:
-        risco = 8;
-        break;
-      case > 90:
-        risco = 7;
+    if (peso < 61) {
+      risco = 9;
+    } else if (peso > 60 && peso < 91) {
+      risco = 8;
+    } else {
+      risco = 7;
     }
   } else if (idade > 19 && idade < 51) {
-    switch (peso) {
-      case < 61:
+      if (peso < 61) {
         risco = 6;
-        break;
-      case 61 && < 91:
+      } else if (peso > 60 && peso < 91) {
         risco = 5;
-        break;
-      case > 90:
+      } else {
         risco = 4;
-    }
+      }
   } else {
-    switch (peso) {
-      case < 61:
-        risco = 3;
-        break;
-      case 61 && < 91:
-        risco = 2;
-        break;
-      case > 90:
-        risco = 1;
+    if (peso < 61) {
+      risco = 3;
+    } else if (peso > 60 && peso < 91) {
+      risco = 2;
+    } else {
+      risco = 1;
     }
   }
   print("Idade: $idade\nPeso: $peso\nParticipa do grupo de risco: $risco");

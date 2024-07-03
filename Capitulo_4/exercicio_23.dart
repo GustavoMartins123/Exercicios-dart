@@ -18,13 +18,17 @@ void main(List<String> args) {
 
 void calcularPreco(int codigo, int quantidadeProduto) {
   double preco = 0;
+  if (codigo <= 0 || codigo > 40) {
+    print("Código inválido");
+    return;
+  }
   if (codigo > 0 && codigo < 11) {
     preco = 10;
   } else if (codigo > 10 && codigo < 21) {
     preco = 15;
   } else if (codigo > 20 && codigo < 31) {
     preco = 20;
-  } else if (codigo > 30 && codigo < 41) {
+  } else{
     preco = 30;
   }
   //  O preço unitário do produto comprado, seguindo a Tabela I
