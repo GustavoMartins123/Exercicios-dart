@@ -2,10 +2,13 @@
 //Crie um segundo vetor, substituindo os valores nulos por 1. Mostre os dois vetores.
 void main(List<String> args) {
   List<int> numeros = [];
-  List numerosNulos = List.filled(30, []);
+  List numerosNulos =
+      List.generate(30, (index) => index % 2 == 0 ? null : index + 2);
   for (var i = 0; i < numerosNulos.length; i++) {
     numeros.add(i);
-    numerosNulos[i] = 1;
+    if (numerosNulos[i] == null) {
+      numerosNulos[i] = 1;
+    }
   }
 
   print("Vetor 1: $numeros\nVetor 2: $numerosNulos");
