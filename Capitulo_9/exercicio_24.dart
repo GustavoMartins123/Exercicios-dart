@@ -8,7 +8,7 @@ import 'dart:io';
 
 void main(List<String> args) {
   stdout.write("Digite um verbo regular terminado em 'ER': ");
-  String verbo = stdin.readLineSync()!.trim();
+  String verbo = stdin.readLineSync()!.toLowerCase().trim();
 
   if (!verbo.endsWith('er')) {
     print("O verbo deve terminar em 'ER'.");
@@ -16,7 +16,6 @@ void main(List<String> args) {
   }
 
   String palavra = verbo.substring(0, verbo.length - 2);
-
   print("");
   print("Conjugação no presente: \n"
       "Eu ${palavra}o, Tu ${palavra}es, Ele ${palavra}e, Ela ${palavra}e, Nós ${palavra}emos, Vós ${palavra}eis, Eles ${palavra}em, Elas ${palavra}em.");
