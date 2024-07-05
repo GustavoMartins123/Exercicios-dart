@@ -23,7 +23,6 @@ List<String> servicosDisponiveis = [
   "Mostrar obras por editora",
   "Sair"
 ];
-const int maxTombo = 20;
 const int maxExemplares = 3;
 
 class Obra {
